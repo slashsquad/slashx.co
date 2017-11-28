@@ -13,6 +13,12 @@
       "email": "lucas@l2design.co"
     }
   ],
+  "scripts": {
+    "build": "webpack"
+  },
   "license": "Copyright 2017 SLASH X",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
 }
