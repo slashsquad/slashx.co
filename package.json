@@ -1,0 +1,18 @@
+{
+  "name": "slashx.co",
+  "version": "0.1.0",
+  "description": "Inventing the future is no rocket science 🚀",
+  "repository": "git@github.com:slashsquad/slashx.co.git",
+  "author": {
+    "name": "Moritz Lang",
+    "email": "moritz@slashkeys.com"
+  },
+  "contributors": [
+    {
+      "name": "Lucas Lohr",
+      "email": "lucas@l2design.co"
+    }
+  ],
+  "license": "Copyright 2017 SLASH X",
+  "private": true
+}
