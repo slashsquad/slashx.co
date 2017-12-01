@@ -63,7 +63,8 @@ const config = {
   plugins: [
     extractPlugin,
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'index.html',
+      favicon: resolve(__dirname, './assets/images/favicon.png')
     }),
   ],
   devServer: {
