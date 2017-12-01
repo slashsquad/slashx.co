@@ -29,10 +29,6 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	exit 0
 fi
 
-# configure git to act as the slashxbot
-git config user.name "SLASH X BOT"
-git config user.email "slashxsocial@gmail.com"
-
 # clone the current prod.slashx.co
 git clone https://${GH_TOKEN}@github.com/slashsquad/prod.slashx.co.git prod
 
@@ -42,6 +38,9 @@ cp -r dist prod/docs
 
 # push the new version
 cd prod
+git config user.name "SLASH X BOT"
+git config user.email "slashxsocial@gmail.com"
+
 git add docs
 git commit -m "Deploy new version 🚀"
 git push origin master
