@@ -49,7 +49,7 @@ const config = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: './assets/media/images/'
+              outputPath: './assets/images/'
             }
           }
         ]
@@ -67,7 +67,7 @@ const config = {
     }),
   ],
   devServer: {
-    contentBase: resolve(__dirname, './dist/assets/media'),
+    contentBase: resolve(__dirname, './dist/assets'),
     compress: true,
     stats: 'errors-only',
     port: 8888,
