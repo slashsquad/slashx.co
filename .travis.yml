@@ -10,7 +10,7 @@ install:
   - yarn
 
 script:
-  - yarn run build
+  - yarn run build:prod
 
 deploy:
   - provider: script
