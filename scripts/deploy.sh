@@ -35,3 +35,13 @@ git config user.email "slashxsocial@gmail.com"
 
 # clone the current prod.slashx.co
 git clone https://${GH_TOKEN}@github.com/slashsquad/prod.slashx.co.git prod
+
+# update docs directory
+rm -rf prod/docs
+cp -r dist prod/docs
+
+# push the new version
+cd prod
+git add docs
+git commit -m "Deploy new version 🚀"
+git push origin master
