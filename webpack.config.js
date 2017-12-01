@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const inProduction = (process.env.NODE_ENV === 'production')
 
 const extractPlugin = new ExtractTextPlugin({
-  filename: './assets/css/app.css'
+  filename: './assets/css/app.css',
+  disable: !inProduction
 })
 
 const config = {
@@ -19,27 +20,25 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        include: /src/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      },
+      {
         test: /\.html$/,
         use: 'html-loader'
       },
       {
         test: /\.scss$/,
-        include: [resolve(__dirname, 'src', 'assets', 'sass')],
+        include: [resolve(__dirname, 'assets', 'scss')],
         use: extractPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: !inProduction
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: !inProduction
-              }
-            }
-          ],
+          use: ['css-loader', 'sass-loader'],
           fallback: 'style-loader'
         })
       },
@@ -62,9 +61,10 @@ const config = {
     ]
   },
   plugins: [
+    extractPlugin,
     new HtmlWebpackPlugin({
       template: 'index.html'
-    })
+    }),
   ],
   devServer: {
     contentBase: resolve(__dirname, './dist/assets/media'),
