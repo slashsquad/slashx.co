@@ -1,0 +1,16 @@
+.projects {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 32px;
+  &__question {
+    font-size: 30px;
+  }
+  &__answer {
+    margin-top: 32px;
+  }
+
+  @media #{$ipad} {
+    padding: 0;
+  }
+}
