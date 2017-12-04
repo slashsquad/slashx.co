@@ -15,6 +15,13 @@
       &:last-child {
         margin-right: 0;
       }
+
+      &:hover #icon--twitter {
+        fill: #C00B27;
+      }
+      &:hover #icon--github {
+        fill: #C00B27;
+      }
     }
   }
 
